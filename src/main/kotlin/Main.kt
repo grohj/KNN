@@ -11,13 +11,13 @@ fun main(args : Array<String>) {
     val reader = IDX("mnist/train-images-idx3-ubyte", "mnist/train-labels-idx1-ubyte")
 
 
-    val nn = NeuralNetwork(listOf(28*28, 128, 10), randomVals = true)
+    val nn = NeuralNetwork(listOf(28 * 28, 128, 128, 10), randomVals = true)
 
-    val epochs = 5
+    val epochs = 2
     val minibatchSize = 32
 
     println("preparing data")
-    var data = reader.asSequence().take(3000).toList()
+    var data = reader.asSequence().take(1000).toList()
     println("${data.size} items prepared")
 
 
